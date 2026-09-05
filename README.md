@@ -25,26 +25,32 @@ all three together.
 ## 1. Preview it locally
 
 ### Option A — just double-click it (fastest)
+
 Double-click `index.html`. It opens in your default browser and works fully — animations,
 hover effects, and the pipeline nav all run fine directly from disk.
 
 ### Option B — run a local server (recommended if you plan to keep editing)
+
 Opening via `file://` works, but a local server behaves closer to how it'll act once
 deployed, and avoids occasional browser restrictions on local files. Pick whichever you
 already have:
 
 **Using Node.js** (you already have this, per your stack):
+
 ```bash
 cd portfolio
 npx serve .
 ```
+
 Then open the URL it prints (usually `http://localhost:3000`).
 
 **Using Python** (also fine if installed):
+
 ```bash
 cd portfolio
 python3 -m http.server 5500
 ```
+
 Then open `http://localhost:5500`.
 
 **Using VS Code:**
@@ -59,15 +65,15 @@ option while you're actively editing.
 Everything you're likely to change lives in **`script.js`**, at the top, as plain data
 arrays — you don't need to touch the HTML or CSS to update your info:
 
-| What you want to change            | Where in `script.js`      |
-|-------------------------------------|----------------------------|
-| Job titles, dates, pipeline labels  | `STAGES`                   |
-| Hero terminal lines                 | `HERO_LINES`               |
-| Experience step-by-step bullets     | `EXPERIENCE_STEPS`         |
-| Skills grouped by category          | `SKILL_GROUPS`             |
-| Project cards                       | `PROJECTS`                 |
-| Certifications                      | `CERTIFICATIONS`           |
-| Awards/recognition pills            | `RECOGNITION`               |
+| What you want to change            | Where in `script.js` |
+| ---------------------------------- | -------------------- |
+| Job titles, dates, pipeline labels | `STAGES`             |
+| Hero terminal lines                | `HERO_LINES`         |
+| Experience step-by-step bullets    | `EXPERIENCE_STEPS`   |
+| Skills grouped by category         | `SKILL_GROUPS`       |
+| Project cards                      | `PROJECTS`           |
+| Certifications                     | `CERTIFICATIONS`     |
+| Awards/recognition pills           | `RECOGNITION`        |
 
 For anything that isn't data-driven — your name, role line, email, phone, LinkedIn URL,
 location — search for the text directly in `index.html` (they're plain, readable HTML,
@@ -84,6 +90,7 @@ defined once at the top as CSS variables:
   ...
 }
 ```
+
 Change a value here and it updates everywhere that color is used.
 
 ---
@@ -94,6 +101,7 @@ Once you're happy with it, here are the three easiest free options — no server
 management, no cost:
 
 ### GitHub Pages (good if you want a `github.io` link)
+
 ```bash
 # inside the portfolio folder
 git init
@@ -103,15 +111,18 @@ git branch -M main
 git remote add origin https://github.com/<your-username>/portfolio.git
 git push -u origin main
 ```
+
 Then on GitHub: **Settings → Pages → Source: `main` branch, `/ (root)`** → Save.
 Your site goes live at `https://<your-username>.github.io/portfolio/`.
 
 ### Netlify (fastest — drag and drop, no git required)
+
 1. Go to [app.netlify.com/drop](https://app.netlify.com/drop)
 2. Drag the whole `portfolio` folder onto the page
 3. Done — it gives you a live URL instantly, and you can rename it in site settings
 
 ### Vercel
+
 1. Go to [vercel.com/new](https://vercel.com/new)
 2. Import the GitHub repo (if you pushed it there) or drag-and-drop the folder
 3. Deploy — no configuration needed since there's no build step
